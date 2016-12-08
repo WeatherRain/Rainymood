@@ -1,0 +1,56 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "25.0.1"
+    defaultConfig {
+        applicationId "zoloandgong.rainymood"
+        minSdkVersion 14
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+        testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    androidTestCompile('com.android.support.test.espresso:espresso-core:2.2.2', {
+        exclude group: 'com.android.support', module: 'support-annotations'
+    })
+    testCompile 'junit:junit:4.12'
+    compile "com.android.support:appcompat-v7:${SUPPORT_VERSION}"
+    compile "com.android.support:design:${SUPPORT_VERSION}"
+    // rx
+    compile 'io.reactivex:rxjava:1.1.1'
+    compile 'io.reactivex:rxandroid:1.1.0'
+    compile 'com.jakewharton.rxbinding:rxbinding:0.4.0'
+    compile 'com.f2prateek.rx.preferences:rx-preferences:1.0.1'
+    // square
+    compile "com.squareup.retrofit2:retrofit:${SQUAREUP_RETROFIT_VERSION}"
+    compile "com.squareup.retrofit2:adapter-rxjava:${SQUAREUP_RETROFIT_VERSION}"
+    compile 'org.ligboy.retrofit2:converter-fastjson-android:2.0.2'
+    compile 'com.squareup.okhttp3:logging-interceptor:3.2.0'
+    compile 'com.squareup:otto:1.3.8'
+    compile 'com.squareup.picasso:picasso:2.5.2'
+    // jakewharton
+    //  compile 'com.jakewharton.timber:timber:4.1.1'
+    compile 'com.jakewharton:butterknife:7.0.1'
+    // alibaba
+    compile 'com.alibaba:fastjson:1.1.52.android'
+    compile 'com.google.zxing:core:3.2.1'
+    // leakcanary
+    debugCompile "com.squareup.leakcanary:leakcanary-android:${SQUAREUP_LEAKCANARY_VERSION}"
+    releaseCompile "com.squareup.leakcanary:leakcanary-android-no-op:${SQUAREUP_LEAKCANARY_VERSION}"
+    testCompile "com.squareup.leakcanary:leakcanary-android-no-op:${SQUAREUP_LEAKCANARY_VERSION}"
+
+   // compile('com.crashlytics.sdk.android:crashlytics:2.6.4@aar') { transitive = true;}
+
+
+}
