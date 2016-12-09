@@ -19,7 +19,7 @@ public class RetrofitUtil  {
      *
      * @return
      */
-    protected static Retrofit getRetrofit() {
+    public static Retrofit getRetrofit() {
 
         if (mRetrofit == null) {
 

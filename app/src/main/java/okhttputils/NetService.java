@@ -13,7 +13,7 @@ public interface NetService {
 
     //http://gank.io/api/data/
     @GET("api/data/{type}/{count}/{page}")
-    Observable<BasicBean> getGirls(
+    Observable<BasicBean> getData(
             @Path("type") String type,
             @Path("count") int count,
             @Path("page") int page
