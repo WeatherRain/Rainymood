@@ -12,5 +12,5 @@ public interface DataSourse {
          void OnDataLoadBack(BasicBean data);
         void onDataNotAvailable();
     }
-    void getData(int page, int size, DataLoadCallBack callback);
+    void getData(String city, String key, DataLoadCallBack callback);
 }

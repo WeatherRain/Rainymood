@@ -11,11 +11,11 @@ import rx.Observable;
 
 public interface NetService {
 
-    //http://gank.io/api/data/
-    @GET("api/data/{type}/{count}/{page}")
+    //http://gank.io/api/data/api/data/{type}/{count}/{page}
+    @GET("/now/{city}/{key}")
     Observable<BasicBean> getData(
-            @Path("type") String type,
-            @Path("count") int count,
-            @Path("page") int page
+            @Path("city") String city,
+            @Path("key") String key
+           // @Path("page") int page
     );
 }

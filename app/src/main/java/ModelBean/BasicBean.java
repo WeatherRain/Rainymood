@@ -23,13 +23,13 @@ private List<ResultsEntity> results;
 
     public static class  ResultsEntity implements Parcelable
   {
-      private String name;
+      private String city;
       private String passworld;
       public String getName() {
-          return name;
+          return city;
       }
       public void setName(String name) {
-          this.name = name;
+          this.city = city;
       }
       public String getPassworld() {
           return passworld;
@@ -45,12 +45,12 @@ private List<ResultsEntity> results;
 
       @Override
       public void writeToParcel(Parcel dest, int flags) {
-          dest.writeString(this.getName());
+          dest.writeString(this.city);
           dest.writeString(this.getPassworld());
 
       }
       protected ResultsEntity(Parcel in) {
-          this.name = in.readString();
+          this.city = in.readString();
           this.passworld = in.readString();
       }
       public static final Parcelable.Creator<ResultsEntity> CREATOR = new Parcelable.Creator<ResultsEntity>() {

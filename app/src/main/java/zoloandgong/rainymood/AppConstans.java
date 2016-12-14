@@ -5,5 +5,5 @@ package zoloandgong.rainymood;
  */
 
 public class AppConstans {
-    public static final String ApiUrl = "http://gank.io/api/data/";
+    public static final String ApiUrl = "https://free-api.heweather.com/v5/";
 }

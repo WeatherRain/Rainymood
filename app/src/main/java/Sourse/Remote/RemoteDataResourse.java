@@ -15,10 +15,10 @@ import rx.schedulers.Schedulers;
 public class RemoteDataResourse implements DataSourse {
 
     @Override
-    public void getData(int page, int size, final DataLoadCallBack callback) {
+    public void getData(String city, String key, final DataLoadCallBack callback) {
                   RetrofitUtil.getRetrofit()
                           .create(NetService.class)
-                          .getData("福利",page,size)
+                          .getData("北京","86590feb4d9f43a790cf49666c410d53")
                           .subscribeOn(Schedulers.io())
                           .observeOn(AndroidSchedulers.mainThread())
                           .subscribe(new Observer<BasicBean>() {
